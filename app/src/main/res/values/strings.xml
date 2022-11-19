@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">WeatherService</string>
+    <string name="unknown_device_name">Unknown device</string>
+    <string name="select_device">Select Device:</string>
+    <string name="connect">Connect</string>
+    <string name="cancel">Cancel</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="connecting">Connecting</string>
+    <string name="unknown_heart_rate">Unknown Heart Rate</string>
+    <string name="default_heart_rate">100</string>
+    <string name="beats_per_minute">BPM</string>
+    <string name="default_device_name">Default Name</string>
+    <string name="default_device_address">00–00–00–00–00–00</string>
+    <string name="temperature">Temperature</string>
+    <string name="humidity">Humidity</string>
+    <string name="humidity_measurement">Humidity Measurement</string>
+    <string name="temperature_measurement">Temperature Measurement</string>
+    <string name="unknown">Unknown</string>
+    <string name="pressure">Pressure</string>
+    <string name="pressure_measurement">Pressure measurement</string>
+    <string name="wind_direction">Wind Direction</string>
+    <string name="degrees">°C</string>
+    <string name="percent">%</string>
+    <string name="pressureText">mbar</string>
+    <string name="wind_direction_measurement">Wind Direction Measurement</string>
+</resources>

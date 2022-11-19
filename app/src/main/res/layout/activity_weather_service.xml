@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeatherServiceActivity">
+
+    <TextView
+        android:id="@+id/wind_direction_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="90dp"
+        android:text="@string/unknown"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wind_direction_view" />
+
+    <TextView
+        android:id="@+id/wind_direction_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="28dp"
+        android:text="@string/wind_direction"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humidity_value" />
+
+    <TextView
+        android:id="@+id/pressure_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/unknown"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pressure_view" />
+
+    <TextView
+        android:id="@+id/pressure_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/pressure"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperature_value" />
+
+    <TextView
+        android:id="@+id/humidity_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="90dp"
+        android:text="@string/unknown"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humid_view" />
+
+    <TextView
+        android:id="@+id/humidity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="60dp"
+        android:text="@string/humidity"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/connect_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="@string/connect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/temperature_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/temperature"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/temp_view"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/temperature_measurement"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperature_text"
+        app:srcCompat="@drawable/thermostat" />
+
+    <ImageView
+        android:id="@+id/humid_view"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="60dp"
+        android:contentDescription="@string/humidity_measurement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humidity_text"
+        app:srcCompat="@drawable/humidity" />
+
+    <TextView
+        android:id="@+id/temperature_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/unknown"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temp_view" />
+
+    <ImageView
+        android:id="@+id/pressure_view"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/pressure_measurement"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pressure_text"
+        app:srcCompat="@drawable/pressure_icon" />
+
+    <ImageView
+        android:id="@+id/wind_direction_view"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="60dp"
+        android:contentDescription="@string/wind_direction_measurement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wind_direction_text"
+        app:srcCompat="@drawable/wind_direction" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

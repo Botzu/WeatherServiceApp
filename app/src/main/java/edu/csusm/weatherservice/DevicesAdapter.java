@@ -1,0 +1,97 @@
+package edu.csusm.weatherservice;
+
+import android.Manifest;
+import android.bluetooth.BluetoothDevice;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import androidx.core.app.ActivityCompat;
+
+import java.util.ArrayList;
+
+public class DevicesAdapter extends BaseAdapter {
+    private Context adapterContext;
+    private ArrayList<BluetoothDevice> mDevices;
+    private LayoutInflater mInflater;
+    private boolean mScanning;
+
+    public DevicesAdapter(LayoutInflater inflater, Context context) {
+        super();
+        mDevices = new ArrayList<BluetoothDevice>();
+        mInflater = inflater;
+        adapterContext = context;
+    }
+
+    public void updateScanningState(boolean isScanning) {
+        mScanning = isScanning;
+    }
+
+    public void add(BluetoothDevice device) {
+        if (!mDevices.contains(device)) {
+            mDevices.add(device);
+        }
+
+    }
+
+    public void remove(int index) {
+        mDevices.remove(index);
+    }
+
+    public void clear() {
+        mDevices.clear();
+    }
+
+    @Override
+    public int getCount() {
+        return mDevices.size();
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return mDevices.get(i);
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        BluetoothDevice device = mDevices.get(i);
+
+        if (view == null) {
+            view = mInflater.inflate(R.layout.list_device, null);
+        }
+
+        TextView deviceNameTxt = view.findViewById(R.id.device_name);
+        TextView deviceAddressTxt = view.findViewById(R.id.device_address);
+
+        String deviceName;
+        String deviceAddress;
+        if (device != null) {
+            if (ActivityCompat.checkSelfPermission(adapterContext, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                Log.d("Permission Check","I didn't pass permissions check");
+            }
+            deviceName = device.getName();
+            deviceAddress = device.getAddress();
+        } else {
+            deviceName = " ";
+            deviceAddress = mScanning ? "Scanning..." : "Found 0 devices";
+        }
+        if (deviceName != null && deviceName.length() > 0)
+            deviceNameTxt.setText(deviceName);
+        else
+            deviceNameTxt.setText(R.string.unknown_device_name);
+
+        deviceAddressTxt.setText(deviceAddress);
+
+        return view;
+    }
+}
